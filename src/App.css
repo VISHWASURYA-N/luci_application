@@ -1,38 +1,186 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
+  height: 100%;
+  width: 100%;
+  background-color:#0b0a18 ;
+  position:fixed;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header{
   display: flex;
+  justify-content: space-around;
+   align-items: center;
+  height: 130px;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+.headerlogo{
+  width: 60%;
+}
+.links{
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+.fas{
+font-size: 30px;
+font-weight: bolder;
+color: white;
+}
+.fa-music {
+  color: rgb(180, 21, 180);
+}
+.color{
+  color: rgb(180, 21, 180);
+  font-weight: bolder;
+  padding: 30px;
+}
+.fa-fast-backward{
+  color: aqua;
+}
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.calender{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  height: 70px;
+  background-color:#0b0a18;
+  flex-wrap: wrap;
+}
+.date{
+  background-color:#0b0a18;
+  padding: 5px;
+  text-align: center;
+  width: 50px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+  color: white;
+  outline: none;
+  border-color: white;
+  
+}
+.date:hover{
+  background-color:aqua ;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+
+}
+.DreamJournalHeader{
+  background-color:#221f49;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: column;
+  height: 250px;
+}
+.dreamJournal{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 500px;
+  height: 250px;
+}
+.saveDream{
+  width: 100px;
+  padding: 8px;
+  border-radius: 20px;
+  background-color:rgb(214, 28, 205);
+  border: none;
+  outline: none;
+}
+.month{
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+textarea {
+   background-color:#221f49;
+   border: none;
+   background-color: transparent;
+   resize: none;
+   outline: none;
+   color: white;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tags{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color:#221f49;
+  padding: 35px;
+  color: white;
+  flex-basis: 400px;
+  height: 250px;
+  
+}
+.tagbutton{
+  width: 100px;
+  padding: 8px;
+  border-radius: 20px;
+  background-color:white;
+  border: none;
+  outline: none;
+  margin: 20px;
+  font-weight: bolder;
+}
+.photos{
+  background-color:#221f49;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 400px;
+  height: 250px;
+}
+.targetref{
+  width: 200px;
+  border: none;
+  outline: none;
+  background-color:#221f49;
+  color: aliceblue;
+}
+.fa-plus-circle{
+  position: fixed;
+  bottom: 0px;
+  font-size: 50px;
+  text-align: center;
+  font-weight: bolder;
+  color:rgb(214, 28, 205);
+  z-index:2;
+}
+.close{
+  width: 100%;
+  height: 30px;
+  padding: 20px;
+  font-size: 20px;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+}
+.btnclose{
+  width: 70px;
+  padding: 8px;
+  border-radius: 20px;
+  background-color:white;
+  border: none;
+  outline: none;
 }
