@@ -2,22 +2,31 @@
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+  box-shadow: none;
+}
+body{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(1, 1, 10);
+
+}
+.navbar-expand-lg{
+  background-color:rgb(1, 1, 10) !important;
 }
 .App {
   text-align: center;
   height: 100%;
-  width: 100%;
+  max-width: 550px;
   background-color:#0b0a18 ;
-  position:fixed;
-}
-.header{
   display: flex;
-  justify-content: space-around;
-   align-items: center;
-  height: 130px;
-  flex-wrap: wrap;
-  z-index: 1;
+  justify-content: center;
+  align-items: center;
+
 }
+
 .headerlogo{
   width: 60%;
 }
@@ -46,21 +55,20 @@ color: white;
 }
 .wrapper{
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  width: 100%;
+  height: 100px;
+  width: 500px;
+  overflow-y: auto;
 }
-.calender{
-  display: flex;
-  justify-content:space-around;
-  align-items: center;
-  height: 70px;
-  background-color:#0b0a18;
-  flex-wrap: wrap;
-}
+
+   .wrapper::-webkit-scrollbar{
+     display: none;
+   }
 .date{
   background-color:#0b0a18;
-  padding: 5px;
+  padding: 15px;
+  margin: 3px;
   text-align: center;
   width: 50px;
   border-radius: 100%;
@@ -73,35 +81,16 @@ color: white;
   border-color: white;
   
 }
+input::date{
+  color: aliceblue;
+}
 .date:hover{
   background-color:aqua ;
 }
 
-.container{
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 20px;
 
-}
-.DreamJournalHeader{
-  background-color:#221f49;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 250px;
-}
-.dreamJournal{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-basis: 500px;
-  height: 250px;
-}
 .saveDream{
-  width: 100px;
+  width: 120px;
   padding: 8px;
   border-radius: 20px;
   background-color:rgb(214, 28, 205);
@@ -113,24 +102,17 @@ color: white;
 }
 
 textarea {
-   background-color:#221f49;
+   
    border: none;
    background-color: transparent;
    resize: none;
    outline: none;
    color: white;
 }
-.tags{
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  background-color:#221f49;
-  padding: 35px;
-  color: white;
-  flex-basis: 400px;
-  height: 250px;
-  
+textarea::placeholder{
+  text-align: center;
 }
+
 .tagbutton{
   width: 100px;
   padding: 8px;
@@ -141,26 +123,19 @@ textarea {
   margin: 20px;
   font-weight: bolder;
 }
-.photos{
-  background-color:#221f49;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  justify-content: center;
-  align-items: center;
-  flex-basis: 400px;
-  height: 250px;
-}
+
 .targetref{
   width: 200px;
   border: none;
   outline: none;
-  background-color:#221f49;
   color: aliceblue;
+  background-color: transparent;
 }
+
 .fa-plus-circle{
   position: fixed;
   bottom: 0px;
+  right: 650px;
   font-size: 50px;
   text-align: center;
   font-weight: bolder;
@@ -174,7 +149,10 @@ textarea {
   font-size: 20px;
   color: white;
   display: flex;
-  justify-content: flex-end;
+  justify-content:center;
+  align-items: center;
+  margin: 3px;
+
 }
 .btnclose{
   width: 70px;
@@ -183,4 +161,11 @@ textarea {
   background-color:white;
   border: none;
   outline: none;
+}
+.card{
+background: rgba(63, 20, 148, 0.2) !important;
+  
+}
+.dreamjournal{
+ max-width:550px
 }
