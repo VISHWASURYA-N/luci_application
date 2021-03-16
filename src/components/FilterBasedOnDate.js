@@ -19,7 +19,10 @@ if(newDreams.length){
                  <div class="card-body text-light">
                    <h5 class="card-title"><span>{new Date(dream.date).getDate()}</span> <span>{new Date(dream.date).toLocaleString('default', { month: 'long' })}</span></h5>
                    <p class="card-text">{dream.dream}</p>
-                   <p class="card-text"><span></span><i  class=" ml-2 fas fa-tags"></i><span>{dream.tag}</span></p>
+                   {dream.tag.map(item=>(
+                     <span class="card-text"><span></span><i  class=" ml-2 fas fa-tags"></i><span>{item.tags}</span></span>
+                  ))}
+                  
                  </div>
                  </div>
                 

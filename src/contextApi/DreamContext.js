@@ -1,11 +1,15 @@
 import React, { createContext, useReducer,useEffect} from 'react';
+// tag:action.payload.tag
  export let DreamContext=createContext();
  export const DreamProvider = ({children}) => {
     const reducer=(dreams,action)=>{
+      // let tagVal=dreams.map(dream=>(dream.tag));
         switch(action.type){
 
             case "ADD_DREAM":return(
-              [...dreams,{id:action.payload.id, date:action.payload.date,dream:action.payload.dream,tag:action.payload.tag,photo:action.payload.photo}] )  
+              [...dreams,{id:action.payload.id, date:action.payload.date,dream:action.payload.dream,
+                tag:action.payload.tag,
+                photo:action.payload.photo}] )  
                  case "DELETE_DREAM":return(
                       dreams.filter(dream=>(dream.id!=action.id))
                     )

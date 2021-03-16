@@ -3,24 +3,29 @@ import Close from './close';
 import {v4 as uuid} from "uuid"
 import {DreamContext} from "../contextApi/DreamContext";
 import { SearchContext } from '../contextApi/dreamSearchapi';
+import Tags from './tags';
 const DreamJournalByDate= () => {
   const { dispatch }=useContext(DreamContext)
   const {datVal}=useContext(SearchContext);
-  console.log(datVal)
+  // console.log(datVal)
   const today=datVal;
     // let month=today.toLocaleString('default', { month: 'long' });
     // let date=today.getDate();
     const targetref = useRef(null);
     const [dream, setDream] = useState("")
     const [photo, setPhoto] = useState("")
-    const [tag, setTag] = useState("")
+    const [addtag, setAddtag] = useState([])
     function handlesubmit(e){
       e.preventDefault();
-      dispatch({type:"ADD_DREAM", payload:{date:today, id:uuid(),dream:dream,tag:tag,photo:photo}})
+      dispatch({type:"ADD_DREAM", payload:{date:today, id:uuid(),dream:dream,tag:addtag,photo:photo}})
       setDream("");
       setPhoto("");
-      setTag("")
-
+      setAddtag([])
+    
+    }
+    function getTags(tags){
+      setAddtag([...addtag,{tags:tags,id:uuid()}])
+     
 
     }
     return ( 
@@ -37,15 +42,9 @@ const DreamJournalByDate= () => {
    <textarea value={dream} placeholder="what happened in your dream ?" onChange={(e)=>(setDream(e.target.value))}></textarea>
     </div>
     </div>
-<div class="card m-3" >
-<div class="card-body">
-  <h6 class="card-title  d-flex justify-content-around"><span><h3 className="text-light">Tags</h3> <h5 className=" m-0 p-0 text-mute text-center"><span className=" text-center">YOUR DREAM SIGNS</span></h5></span><span><span><i class="far fa-exclamation-circle text-light"></i></span></span></h6>
-  <div>
-        <input  value={tag} className="targetref custom-text-input" placeholder="TAG NAME" ref={targetref} type="text" onChange={(e)=>(setTag(e.target.value))} />
-        </div>
-        <button onClick={()=>{targetref.current.focus()}} className="tagbutton"> + Add tag</button>
-        </div>
- </div>
+    <Tags getTags={getTags}/>
+    
+
 
  <div class="card m-3" >
 <div class="card-body">
